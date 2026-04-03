@@ -29,6 +29,6 @@ jobs:
 
       - name: Build Docker images
         run: |
-          docker build -t my-service:1 MyService/Dockerfile .
+          docker build -t my-service:1 -f MyService/Dockerfile .
 
 
