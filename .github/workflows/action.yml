@@ -10,6 +10,7 @@ permissions:
   contents: read
   security-events: write
   actions: read
+  checks: write
 
 jobs:
   build-and-test:
@@ -26,6 +27,11 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
           cache: 'gradle'
+
+      - name: Run tests
+        working-directory: ./MyService
+        run: ./gradlew test
+
 
       - name: Build Docker images
         run: |
